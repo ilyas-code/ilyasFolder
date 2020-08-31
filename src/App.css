@@ -1,0 +1,35 @@
+body{
+  background-color: white;
+  font-family: sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 14px;
+}
+
+.App{
+   margin: 0 auto;
+   text-align: center;
+}
+
+.scores{
+  margin: 0 auto;
+  display:none;
+  color: #ffffff;
+  background-color: #ffc62a;
+  border: solid #ffbb00;
+  border-radius: 10px;
+  width: 400px;
+  
+}
+.answers {
+  text-align: center;
+  color: #fc8600;
+  font-family: sans-serif;
+}
+.answers li {
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 1.5em;
+  text-align:left;
+}
+

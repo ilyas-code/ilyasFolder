@@ -1,0 +1,133 @@
+
+import React from 'react';
+import './App.css';
+
+
+
+
+
+class App extends React.Component {
+    constructor(){
+      super()
+      this.state = {firstName:"",
+      lastName: "",
+      age:"",
+      gender:"",
+      destination:"",
+      isVegan:true,
+      isKosher:false,
+      isLactoseFree:false
+      
+}
+this.handleChange = this.handleChange.bind(this)
+}
+
+handleChange(event){
+const target=event.target;
+const value = target.type === "checkbox" ? target.checked:target.value
+const name = target.name
+this.setState({[name]:value})
+}
+
+   
+   
+render(){
+    return (
+          <div className="App">
+            <main className="main-st">
+              <form>
+                <input name="firstName" 
+                      value={this.state.firstName} 
+                      placeholder="First Name"
+                      onChange={this.handleChange}
+                /> 
+                <br/>
+                <input name="lastName" 
+                      value={this.state.lastName} 
+                      placeholder="Last Name"
+                      onChange={this.handleChange}
+                /> 
+                <br/>
+                <input name="age" 
+                      value={this.state.age} 
+                      placeholder="Age"
+                      onChange={this.handleChange}
+                />
+                <br/> 
+                <label>
+                  <input type="radio"
+                        name="gender"
+                        value="female"
+                        checked={this.state.gender === "female"}
+                        onChange={this.handleChange}
+                  />Female
+                </label>
+                <br/>
+                <label>
+                  <input type="radio"
+                        name="gender"
+                        value="male"
+                        checked={this.state.gender === "male"}
+                        onChange={this.handleChange}
+                  />Male
+                </label>
+                <br/>
+                  <select vaule={this.state.destination} name="destination" onChange={this.handleChange}>
+                  <option value="">Choose your destination</option>
+                  <option value="India">India</option>
+                  <option value="Europe">Europe</option>
+                  <option value="NewZealand">NewZealand</option>
+                  <option value="London">London</option>
+                </select>
+                <br/>
+                <label>
+                  <input 
+                    type="checkbox" 
+                    name="isVegan"
+                    value={this.state.isVegan} 
+                    onChange={this.handleChange}
+                  />Vegan?
+                </label>
+                <br/>
+                <label>
+                  <input 
+                    type="checkbox" 
+                    name="isKosher"
+                    value={this.state.isKosher} 
+                    onChange={this.handleChange}
+                  />Kosher?
+                </label>
+                <br/>
+                <label>
+                  <input 
+                    type="checkbox" 
+                    name="isLactoseFree"
+                    value={this.state.isLactoseFree} 
+                    onChange={this.handleChange}
+                  />LactoseFree?
+                </label>
+                <br/>
+                <button>Submit</button>
+              </form>
+              <hr/>
+              <h1>Entered infromation</h1>
+              <p>First Name:{this.state.firstName}</p>
+              <p>Last Name:{this.state.lastName}</p>
+              <p>Age:{this.state.age}</p>
+              <p>Gender:{this.state.gender}</p>
+              <p>Destination:{this.state.destination}</p>
+              <p>Dietary Restrictions:
+                {this.state.isVegan ? "Vegan":null}
+                <br/> 
+                { this.state.isKosher ? "Kosher":null}
+                { this.state.isLactoseFree ? "Lactose free":null}
+                
+              </p>
+
+            </main>
+          </div>
+        )
+    }
+}
+
+export default App;

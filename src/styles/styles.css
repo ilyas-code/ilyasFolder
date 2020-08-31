@@ -1,0 +1,96 @@
+/* body{
+    background-color: white;
+    font-family: sans-serif;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 14px;
+  } */
+  /* border: solid blue 1px; */
+  header{
+    margin: 0 auto;
+    padding: 0;
+    width:100%;
+  
+  }
+  section{
+    width:100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .head-1{
+    
+    padding:15px 0 15px 20px;
+    width: 100%;
+    background-color:#ebb434;
+    color: white;
+  }
+  
+  .form-card{
+     width: 400px;
+     padding:0;
+     margin: 0 auto; 
+     /* border: solid blue 1px; */
+      position: relative;
+  }
+  
+  .form-card form{
+    padding: 10px 0 0 20px;
+    text-align: left;
+    /* border: solid red 1px;
+   */
+  }
+  
+  /* .form-card ul{
+    list-style: none;
+    border: solid blue 1px;
+    padding: 10px; */
+  
+  .Q-card{
+   padding:10px 0 0 10px;
+   /* border: solid blue 1px; */
+  }
+   button{
+     font-size: 15px;
+     font-weight: bold;
+     background-color:blue;
+     border: none;
+     color: white;
+     border-radius: 5px;
+     padding: 15px;
+     text-align: center;
+     text-decoration: none;
+     display: inline;
+     cursor: pointer;
+     transition: background-color 0.4s;
+   }
+   .options-card{
+     display: flex;
+     flex-direction: column;
+     justify-content: left;
+     /* border: solid blue 1px; */
+  
+   }
+  
+   .options{
+     border: solid orange 1px;
+     padding: 8px 0 8px 0;
+     margin: 4px 0 4px 0;
+     border-radius: 5px;
+  
+   }
+  
+   .options:hover{
+     background-color: orange;
+   }
+  
+  .options span{
+    padding: 0 0 0 30px;
+  }
+  
+  .s-button{
+    padding:12px;
+    margin: 0;
+    /* border: solid blue 1px; */
+  }
+  
