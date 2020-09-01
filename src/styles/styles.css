@@ -84,8 +84,8 @@
      background-color: orange;
    }
   
-  .options span{
-    padding: 0 0 0 30px;
+  .options p{
+    display: inline-block;
   }
   
   .s-button{
