@@ -14,19 +14,19 @@ function Section(props){
             <div className="options-card">
                 <div className="options">
                     <input type="radio" name={props.id} value= {props.Options[0]} onChange={props.handleChange}/>
-                    <span>{props.Options[0]}</span>
+                    <p>{props.Options[0]}</p>
                 </div>
                 <div className="options">
                     <input type="radio" name={props.id} value= {props.Options[1]} onChange={props.handleChange}/>
-                    <span>{props.Options[1]}</span>
+                    <p>{props.Options[1]}</p>
                 </div>
                 <div className="options">
                     <input type="radio" name={props.id} value= {props.Options[2]} onChange={props.handleChange}/>
-                    <span>{props.Options[2]}</span>
+                    <p>{props.Options[2]}</p>
                 </div>
                 <div className="options">
                     <input type="radio" name={props.id} value= {props.Options[3]} onChange={props.handleChange}/>
-                    <span>{props.Options[3]}</span>
+                    <p>{props.Options[3]}</p>
                 </div>
             </div>
         </form>
