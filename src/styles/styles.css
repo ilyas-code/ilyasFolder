@@ -6,16 +6,11 @@
     font-size: 14px;
   } */
   /* border: solid blue 1px; */
-  header{
-    margin: 0 auto;
-    padding: 0;
-    width:100%;
   
-  }
   section{
-    width:100%;
-    margin: 0 auto;
-    text-align: center;
+    margin : 0 auto;
+    padding: 0;
+    width: 400px;
   }
   
   .head-1{
@@ -37,8 +32,8 @@
   .form-card form{
     padding: 10px 0 0 20px;
     text-align: left;
-    /* border: solid red 1px;
-   */
+    /* border: solid red 1px; */
+  
   }
   
   /* .form-card ul{
@@ -48,6 +43,9 @@
   
   .Q-card{
    padding:10px 0 0 10px;
+   font-size: 1.2em;
+   margin: 0;
+   
    /* border: solid blue 1px; */
   }
    button{
@@ -74,9 +72,12 @@
   
    .options{
      border: solid orange 1px;
-     padding: 8px 0 8px 0;
+     padding: 12px 0 12px 0;
      margin: 4px 0 4px 0;
      border-radius: 5px;
+     display: flex;
+     flex-direction: row;
+     align-content: center;
   
    }
   
@@ -85,8 +86,12 @@
    }
   
   .options p{
-    display: inline-block;
+    padding: 0 0 0 20px;
+    margin: 0;
+    
   }
+
+  
   
   .s-button{
     padding:12px;

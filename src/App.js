@@ -95,8 +95,8 @@ showScore(event){
     return (
       <div className="App">
         <Header/>
-         
-        {qsection}
+         <section>
+           {qsection}
          
         <div style={this.state.show} className="scores">
           <h1>Your Score : {this.state.score+"/"+Quiz.length}</h1>
@@ -110,6 +110,8 @@ showScore(event){
         <div className="s-button">
           <button onClick={this.showScore}>Submit Answer</button>
         </div>
+        </section>
+        
         
       </div>
     )

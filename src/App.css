@@ -9,16 +9,19 @@ body{
 .App{
    margin: 0 auto;
    text-align: center;
+   padding: 0;
 }
 
 .scores{
   margin: 0 auto;
+  
   display:none;
   color: #ffffff;
   background-color: #ffc62a;
   border: solid #ffbb00;
   border-radius: 10px;
-  width: 400px;
+  width: 375px;
+  
   
 }
 .answers {
