@@ -3,7 +3,7 @@ import React from "react";
 function Section(props) {
   return (
     <div className="form-card">
-      <form>
+      <form  onChange={props.handleChange}>
         <div className="Q-card">
           <h3>Question {props.id + 1} :</h3>
           <p>{props.Question}</p>
@@ -14,7 +14,7 @@ function Section(props) {
               type="radio"
               name={props.id}
               value={props.Options[0]}
-              onChange={props.handleChange}
+              // onChange={props.handleChange}
             />
             <p>{props.Options[0]}</p>
           </div>
@@ -23,7 +23,7 @@ function Section(props) {
               type="radio"
               name={props.id}
               value={props.Options[1]}
-              onChange={props.handleChange}
+              // onChange={props.handleChange}
             />
             <p>{props.Options[1]}</p>
           </div>
@@ -32,7 +32,7 @@ function Section(props) {
               type="radio"
               name={props.id}
               value={props.Options[2]}
-              onChange={props.handleChange}
+              // onChange={props.handleChange}
             />
             <p>{props.Options[2]}</p>
           </div>
