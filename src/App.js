@@ -4,6 +4,7 @@ import './App.css';
 import Section from './components/Section';
 import Header from './components/Header';
 import Quiz from './components/quiz'
+import Button from '@material-ui/core/Button';
 
 
 class App extends React.Component{
@@ -105,10 +106,13 @@ showScore(event){
             <ol>{answers}</ol>
           </div>
         </div>
-         
+       
           
         <div className="s-button">
-          <button onClick={this.showScore}>Submit Answer</button>
+          {/* <button onClick={this.showScore}>Submit Answer</button> */}
+          <Button variant="contained" color="warning.light"  onClick={this.showScore}>
+              Submit
+          </Button>
         </div>
         </section>
         
