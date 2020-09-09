@@ -14,7 +14,7 @@ body{
 
 .scores{
   margin: 0 auto;
-  
+  margin-top: 30px;
   display:none;
   color: #ffffff;
   background-color: #ffc62a;

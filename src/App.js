@@ -4,7 +4,7 @@ import "./App.css";
 import Section from "./components/Section";
 import Header from "./components/Header";
 import Quiz from "./components/quiz";
-import Button from "@material-ui/core/Button";
+
 
 class App extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class App extends React.Component {
       ansrs: [],
       score: null,
       tAndf: [],
-      show: { display: "none" }
+      show: { display: "none" },
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -24,7 +24,7 @@ class App extends React.Component {
     var value = event.target.value;
     var name = event.target.name;
 
-    this.setState(prevState => {
+    this.setState((prevState) => {
       prevState.ansrs[name] = value;
       return { ansrs: prevState.ansrs };
     });
@@ -44,23 +44,23 @@ class App extends React.Component {
       }
     }
 
-    this.setState(prevState => {
+    this.setState((prevState) => {
       prevState.score = scr;
       prevState.tAndf = tF;
       prevState.show = shw;
       return {
         score: prevState.score,
         tAndf: prevState.tAndf,
-        show: prevState.show
+        show: prevState.show,
       };
     });
   }
 
   render() {
-    const answers = Quiz.map(ab => {
+    const answers = Quiz.map((ab) => {
       return <li key={ab.id}>{ab.Ans}</li>;
     });
-    const qsection = Quiz.map(Qiz => {
+    const qsection = Quiz.map((Qiz) => {
       return (
         <Section
           key={Qiz.id}
@@ -88,14 +88,8 @@ class App extends React.Component {
           </div>
 
           <div className="s-button">
-            {/* <button onClick={this.showScore}>Submit Answer</button> */}
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={this.showScore}
-            >
-              Submit
-            </Button>
+            <button onClick={this.showScore}>Submit Answer</button>
+            
           </div>
         </section>
       </div>
