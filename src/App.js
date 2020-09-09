@@ -91,7 +91,7 @@ class App extends React.Component {
             {/* <button onClick={this.showScore}>Submit Answer</button> */}
             <Button
               variant="contained"
-              color="warning.light"
+              color="primary"
               onClick={this.showScore}
             >
               Submit
