@@ -18,7 +18,7 @@
     
     padding:15px 0 15px 0;
     width: 100%;
-    background-color:#ebb434;
+    background-color:rgb(235, 180, 51);
     color: white;
   }
   
@@ -83,7 +83,8 @@
      border-radius: 5px;
      display: flex;
      flex-direction: row;
-     align-content: center;
+     justify-content: left;
+     align-content:center;
      width: 360px;
    }
   
@@ -91,9 +92,11 @@
      background-color: orange;
    }
   
+  
   .options p{
     padding: 0 0 0 20px;
     margin: 0;
+    
     
   }
 

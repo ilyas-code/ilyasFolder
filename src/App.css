@@ -1,4 +1,4 @@
-body{
+body {
   background-color: white;
   font-family: roboto;
   margin: 0 auto;
@@ -6,33 +6,31 @@ body{
   font-size: 14px;
 }
 
-.App{
-   margin: 0 auto;
-   text-align: center;
-   padding: 0;
+.App {
+  margin: 0 auto;
+  text-align: center;
+  padding: 0;
 }
 
-.scores{
+.scores {
   margin: 0 auto;
   margin-top: 30px;
-  display:none;
-  color: #ffffff;
-  background-color: #ffc62a;
+  display: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(235, 180, 51);
   border: solid #ffbb00;
   border-radius: 10px;
   width: 375px;
-  
-  
 }
-.answers {
+.answers h1 {
   text-align: center;
-  color: #fc8600;
+
+  color: #000000;
   font-family: sans-serif;
 }
 .answers li {
   font-weight: bold;
   color: #ffffff;
   font-size: 1.5em;
-  text-align:left;
+  text-align: left;
 }
-
