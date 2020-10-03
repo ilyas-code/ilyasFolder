@@ -10,7 +10,41 @@ import UserSignUp from "./components/UserSignUp";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-class App extends React.Component {
+
+
+
+
+function App() {
+  return (
+    <div className="App">
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Header />
+          </Route>
+          <Route path="/quizUrl/:id">
+            <LogHeader />
+            <MainSection />
+          </Route>
+
+          <Route path="/SignUp">
+            <UserSignUp />
+          </Route>
+
+          <Route path="/SignIn">
+            <UserSignIn />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
+  )
+}
+
+export default App
+
+
+
+class MainSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -89,6 +123,7 @@ class App extends React.Component {
 
   render() {
 
+
     // console.log("from render "+this.state.Quiz[0]);
 
     const answers = this.state.Quiz.map((ab) => {
@@ -113,43 +148,23 @@ class App extends React.Component {
     });
 
     return (
-      <div className="App">
-        <Router>
-          <Switch>
-            <Route exact path="/">
-              <Header />
-            </Route>
-            <Route path="/home/:id">
-              <LogHeader />
-              <section>
-                {qsection}
+      <section>
+        {qsection}
 
-                <div style={this.state.show} className="scores">
-                  <h1>Your Score : {this.state.score + "/" + this.state.Quiz.length}</h1>
-                  <div className="answers">
-                    <h1>Correct Answers:</h1>
-                    <ul>{answers}</ul>
-                  </div>
-                </div>
+        <div style={this.state.show} className="scores">
+          <h1>Your Score : {this.state.score + "/" + this.state.Quiz.length}</h1>
+          <div className="answers">
+            <h1>Correct Answers:</h1>
+            <ul>{answers}</ul>
+          </div>
+        </div>
 
-                <div className="s-button">
-                  <button onClick={this.showScore}>Submit Answer</button>
-                </div>
-              </section>
-            </Route>
-
-            <Route path="/SignUp">
-              <UserSignUp />
-            </Route>
-
-            <Route path="/SignIn">
-              <UserSignIn />
-            </Route>
-          </Switch>
-        </Router>
-      </div>
+        <div className="s-button">
+          <button onClick={this.showScore}>Submit Answer</button>
+        </div>
+      </section>
     );
   }
 }
 
-export default App;
+

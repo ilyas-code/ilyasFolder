@@ -11,7 +11,7 @@ function Section(props) {
       <div className="form-card">
 
         <div className="Q-card">
-          <h3>Question {props.qid + 1} :</h3>
+          <h3>Question {props.id + 1} :</h3>
           <p>{props.Question}</p>
         </div>
         <div className="options-card">
