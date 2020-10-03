@@ -3,13 +3,18 @@ import "./styles/styles.css";
 import "./App.css";
 import Section from "./components/Section";
 import Header from "./components/Header";
-import Quiz from "./components/quiz";
-
+import LogHeader from "./components/LogHeader";
+// import Quiz from "./components/quiz";
+import UserSignIn from "./components/UserSignIn";
+import UserSignUp from "./components/UserSignUp";
+import axios from "axios";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      Quiz: [],
       ansrs: [],
       score: null,
       tAndf: [],
@@ -24,6 +29,7 @@ class App extends React.Component {
     var value = event.target.value;
     var name = event.target.name;
 
+
     this.setState((prevState) => {
       prevState.ansrs[name] = value;
       return { ansrs: prevState.ansrs };
@@ -35,8 +41,8 @@ class App extends React.Component {
     var scr = 0;
     var tF = [];
     var shw = { display: "block" };
-    for (let i = 0; i <= Quiz.length - 1; i++) {
-      if (Quiz[i].Ans === this.state.ansrs[i]) {
+    for (let i = 0; i <= this.state.Quiz.length - 1; i++) {
+      if (this.state.Quiz[i].Ans === this.state.ansrs[i]) {
         scr = scr + 1;
         tF[i] = true;
       } else {
@@ -56,15 +62,48 @@ class App extends React.Component {
     });
   }
 
+  componentDidMount() {
+    // var xhr = new XMLHttpRequest();
+
+    // xhr.withCredentials = "true";
+    // xhr.addEventListener("readystatechange", function () {
+    //   if (this.readyState === 4) {
+    //     console.log(this.responseText);
+    //     var quizdata = JSON.parse(this.responseText)
+    //     console.log(quizdata);
+    //   }
+    // });
+
+    // xhr.open("GET", "http://localhost:4000/quizQ");
+
+    // xhr.send();
+    axios.get(`http://localhost:4000/quizQ`).then((res) => {
+      // console.log(res.data);
+      var resdata = res.data
+      // console.log(resdata);
+      this.setState(
+        { Quiz: resdata.QandA }
+      );
+    }).catch(err => { console.log(err) })
+  }
+
   render() {
-    const answers = Quiz.map((ab) => {
-      return <li key={ab.id}>{ab.Ans}</li>;
+
+    // console.log("from render "+this.state.Quiz[0]);
+
+    const answers = this.state.Quiz.map((ab) => {
+      return (
+        <li key={ab.qid}>
+          {ab.qid + 1 + ". "}
+          {ab.Ans}
+        </li>
+      );
     });
-    const qsection = Quiz.map((Qiz) => {
+    const qsection = this.state.Quiz.map((Qiz) => {
       return (
         <Section
-          key={Qiz.id}
-          id={Qiz.id}
+          key={Qiz.qid}
+          id={Qiz.qid}
           Question={Qiz.Question}
           Options={Qiz.Options}
           handleChange={this.handleChange}
@@ -75,23 +114,39 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <Header />
-        <section>
-          {qsection}
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Header />
+            </Route>
+            <Route path="/home/:id">
+              <LogHeader />
+              <section>
+                {qsection}
 
-          <div style={this.state.show} className="scores">
-            <h1>Your Score : {this.state.score + "/" + Quiz.length}</h1>
-            <div className="answers">
-              <h1>Correct Answers:</h1>
-              <ol>{answers}</ol>
-            </div>
-          </div>
+                <div style={this.state.show} className="scores">
+                  <h1>Your Score : {this.state.score + "/" + this.state.Quiz.length}</h1>
+                  <div className="answers">
+                    <h1>Correct Answers:</h1>
+                    <ul>{answers}</ul>
+                  </div>
+                </div>
 
-          <div className="s-button">
-            <button onClick={this.showScore}>Submit Answer</button>
-            
-          </div>
-        </section>
+                <div className="s-button">
+                  <button onClick={this.showScore}>Submit Answer</button>
+                </div>
+              </section>
+            </Route>
+
+            <Route path="/SignUp">
+              <UserSignUp />
+            </Route>
+
+            <Route path="/SignIn">
+              <UserSignIn />
+            </Route>
+          </Switch>
+        </Router>
       </div>
     );
   }

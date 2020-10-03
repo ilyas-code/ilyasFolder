@@ -11,7 +11,7 @@ const Quiz = [
     Options: [
       "Behavior of human beings",
       "Insects",
-      "The origin and history of technical and scientific terms hsadsuhdsauhdihalh",
+      "The origin and history of technical and scientific terms",
       "The formation of rocks"
     ],
     Ans: "Insects"

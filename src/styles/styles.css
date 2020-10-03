@@ -1,111 +1,166 @@
-/* body{
-    background-color: white;
-    font-family: sans-serif;
-    margin: 0 auto;
-    padding: 0;
-    font-size: 14px;
-  } */
-  /* border: solid blue 1px; */
-  
-  section{
-    margin : 0 auto;
-    padding: 0;
-    width: 400px;
-    /* background-color: aqua; */
-  }
-  
-  .head-1{
-    
-    padding:15px 0 15px 0;
-    width: 100%;
-    background-color:rgb(235, 180, 51);
-    color: white;
-  }
-  
-  .form-card{
-     width: 400px;
+body {
+  background-color: white;
+  font-family: Roboto, sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 14px;
+}
+
+section {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 400px;
+  /* background-color: aqua; */
+}
+
+.head-1 {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 15px 0 15px 0;
+  width: 100%;
+  background-color: rgb(235, 180, 51);
+  color: white;
+}
+
+/* .form-card{
+     width: 375px;
      padding:0;
      margin: 0 auto; 
      /* border: solid blue 1px; */
-      position: relative;
-  }
-  
-  .form-card form{
-    margin-top: 30px;
-    padding: 10px 0 30px 20px;
-    border: white;
-    border-radius: 10px;
-    text-align: left;
-    box-shadow: 1px 5px 8px grey
-    
-    /* border: solid red 1px; */
-  
-  }
-  
-  /* .form-card ul{
-    list-style: none;
-    border: solid blue 1px;
-    padding: 10px; */
-  
-  .Q-card{
-   padding:10px 0 0 10px;
-   font-size: 1.2em;
-   margin: 0;
-   
-   /* border: solid blue 1px; */
-  }
-   button{
-     font-size: 15px;
-     font-weight: bold;
-     background-color:rgb(0, 81, 255);
-     border: none;
-     color: white;
-     border-radius: 5px;
-     padding: 15px;
-     text-align: center;
-     text-decoration: none;
-     display: inline;
-     cursor: pointer;
-     transition: background-color 0.4s;
-   }
-   .options-card{
-     display: flex;
-     flex-direction: column;
-     justify-content: left;
-     /* border: solid blue 1px; */
-  
-   }
-  
-   .options{
-     border: solid orange 1px;
-     padding: 12px 0 12px 0;
-     margin: 4px 0 4px 0;
-     border-radius: 5px;
-     display: flex;
-     flex-direction: row;
-     justify-content: left;
-     align-content:center;
-     width: 360px;
-   }
-  
-   .options:hover{
-     background-color: orange;
-   }
-  
-  
-  .options p{
-    padding: 0 0 0 20px;
-    margin: 0;
-    
-    
-  }
+/*position: relative;
+  } */
 
-  
-  
-  .s-button{
-    padding:12px;
-    margin: 0;
-    /* border: solid blue 1px; */
-  }
- 
-  
+.form-card {
+  margin-top: 30px;
+  padding: 10px 0 30px 20px;
+  border: white;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 1px 5px 8px grey;
+
+  /* border: solid red 1px; */
+}
+
+.Q-card {
+  padding: 10px 0 0 10px;
+  font-size: 1.2em;
+  margin: 0;
+
+  /* border: solid blue 1px; */
+}
+button {
+  outline: 0;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: rgb(0, 81, 255);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+.options-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  /* border: solid blue 1px; */
+}
+
+.options {
+  border: solid orange 1px;
+  padding: 12px 0 12px 0;
+  margin: 4px 0 4px 0;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-content: center;
+  width: 340px;
+  background-color: white;
+}
+
+.options:hover {
+  background-color: orange;
+}
+
+.options p {
+  padding: 0 0 0 20px;
+  margin: 0;
+}
+
+.s-button {
+  padding: 12px;
+  margin: 0;
+  /* border: solid blue 1px; */
+}
+
+.signBtn {
+  font-size: 15px;
+  font-weight: bold;
+  background-color: rgb(255, 94, 0);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.sign {
+  margin: 0 auto;
+  position: relative;
+  top: 30px;
+  padding-top: 18px;
+  border: solid blue 1px;
+  width: 375px;
+
+  text-align: center;
+  border: white;
+  border-radius: 5px;
+  box-shadow: 1px 5px 8px grey;
+}
+
+.sign input {
+  /* margin:10px 3px 10px 3px; */
+  padding: 8px 2px 8px 2px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: solid rgb(255, 145, 0) 2px;
+  outline: 0;
+}
+
+.sign input:focus {
+  border-bottom: rgb(255, 0, 0) solid 3px;
+}
+
+.subBtn {
+  font-size: 15px;
+  font-weight: bold;
+  background-color: rgb(255, 94, 0);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.sign h1 {
+  margin: 0;
+  padding: 0 0 50px 0;
+  text-decoration: underline;
+}
