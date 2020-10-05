@@ -7,14 +7,20 @@ import LogHeader from "./components/LogHeader";
 // import Quiz from "./components/quiz";
 import UserSignIn from "./components/UserSignIn";
 import UserSignUp from "./components/UserSignUp";
-import axios from "axios";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+// import axios from "axios";
+import { BrowserRouter as Router,
+  Switch,
+  Route, } from "react-router-dom";
+  // Link,
+  // Redirect,
+  // useHistory,
+  // useLocation, useParams, useRouteMatch
 
 
 
 
 function App() {
+  
   return (
     <div className="App">
       <Router>
@@ -22,10 +28,10 @@ function App() {
           <Route exact path="/">
             <Header />
           </Route>
-          <Route path="/quizUrl/:id">
-            <LogHeader />
-            <MainSection />
-          </Route>
+          <Route path="/quizUrl/:id" component={MainSection} />
+           
+            
+          
 
           <Route path="/SignUp">
             <UserSignUp />
@@ -53,6 +59,7 @@ class MainSection extends React.Component {
       score: null,
       tAndf: [],
       show: { display: "none" },
+      id:props.match.params.id
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -97,6 +104,26 @@ class MainSection extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.state.id);
+    fetch(`http://localhost:4000/quizQ/${this.state.id}`)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            Quiz:result.qanda
+          });
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+
     // var xhr = new XMLHttpRequest();
 
     // xhr.withCredentials = "true";
@@ -111,18 +138,20 @@ class MainSection extends React.Component {
     // xhr.open("GET", "http://localhost:4000/quizQ");
 
     // xhr.send();
-    axios.get(`http://localhost:4000/quizQ`).then((res) => {
-      // console.log(res.data);
-      var resdata = res.data
-      // console.log(resdata);
-      this.setState(
-        { Quiz: resdata.QandA }
-      );
-    }).catch(err => { console.log(err) })
+    
+    
+    // axios.get(`http://localhost:4000/quizQ/${this.state.id}`).then((res) => {
+    //   console.log("Response Succeed");
+    //   var resdata = res.data
+    //   // console.log(resdata);
+    //   this.setState(
+    //     { Quiz: resdata.qanda }
+    //   );
+    // }).catch(err => { console.log(err) })
   }
 
   render() {
-
+    
 
     // console.log("from render "+this.state.Quiz[0]);
 
@@ -148,7 +177,9 @@ class MainSection extends React.Component {
     });
 
     return (
-      <section>
+       <div>
+         <LogHeader/>
+          <section>
         {qsection}
 
         <div style={this.state.show} className="scores">
@@ -163,6 +194,8 @@ class MainSection extends React.Component {
           <button onClick={this.showScore}>Submit Answer</button>
         </div>
       </section>
+       </div>
+     
     );
   }
 }

@@ -1,12 +1,12 @@
 const Quiz = [
   {
-    id: 0,
+    qid: 0,
     Question: "what is the shape of the earth",
     Options: ["square", "sphere", "conical", "plane"],
     Ans: "sphere"
   },
   {
-    id: 1,
+    qid: 1,
     Question: "Entomology is the science that studies",
     Options: [
       "Behavior of human beings",
