@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/ilyas-code/ilyasFolder.git/static/css/main.2fd18e40.chunk.css",
-    "main.js": "/ilyas-code/ilyasFolder.git/static/js/main.2f17ad21.chunk.js",
-    "main.js.map": "/ilyas-code/ilyasFolder.git/static/js/main.2f17ad21.chunk.js.map",
-    "runtime-main.js": "/ilyas-code/ilyasFolder.git/static/js/runtime-main.85e52369.js",
-    "runtime-main.js.map": "/ilyas-code/ilyasFolder.git/static/js/runtime-main.85e52369.js.map",
-    "static/js/2.92e3acc2.chunk.js": "/ilyas-code/ilyasFolder.git/static/js/2.92e3acc2.chunk.js",
-    "static/js/2.92e3acc2.chunk.js.map": "/ilyas-code/ilyasFolder.git/static/js/2.92e3acc2.chunk.js.map",
-    "index.html": "/ilyas-code/ilyasFolder.git/index.html",
-    "precache-manifest.c3a83fdef1c61146afcde11a78822e8f.js": "/ilyas-code/ilyasFolder.git/precache-manifest.c3a83fdef1c61146afcde11a78822e8f.js",
-    "service-worker.js": "/ilyas-code/ilyasFolder.git/service-worker.js",
-    "static/css/main.2fd18e40.chunk.css.map": "/ilyas-code/ilyasFolder.git/static/css/main.2fd18e40.chunk.css.map",
-    "static/js/2.92e3acc2.chunk.js.LICENSE.txt": "/ilyas-code/ilyasFolder.git/static/js/2.92e3acc2.chunk.js.LICENSE.txt"
+    "main.css": "/ilyasFolder/static/css/main.2fd18e40.chunk.css",
+    "main.js": "/ilyasFolder/static/js/main.14d745ce.chunk.js",
+    "main.js.map": "/ilyasFolder/static/js/main.14d745ce.chunk.js.map",
+    "runtime-main.js": "/ilyasFolder/static/js/runtime-main.ed3f1dca.js",
+    "runtime-main.js.map": "/ilyasFolder/static/js/runtime-main.ed3f1dca.js.map",
+    "static/js/2.92e3acc2.chunk.js": "/ilyasFolder/static/js/2.92e3acc2.chunk.js",
+    "static/js/2.92e3acc2.chunk.js.map": "/ilyasFolder/static/js/2.92e3acc2.chunk.js.map",
+    "index.html": "/ilyasFolder/index.html",
+    "precache-manifest.ad64446a00c9e2b19cd2b703e5300044.js": "/ilyasFolder/precache-manifest.ad64446a00c9e2b19cd2b703e5300044.js",
+    "service-worker.js": "/ilyasFolder/service-worker.js",
+    "static/css/main.2fd18e40.chunk.css.map": "/ilyasFolder/static/css/main.2fd18e40.chunk.css.map",
+    "static/js/2.92e3acc2.chunk.js.LICENSE.txt": "/ilyasFolder/static/js/2.92e3acc2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.85e52369.js",
+    "static/js/runtime-main.ed3f1dca.js",
     "static/js/2.92e3acc2.chunk.js",
     "static/css/main.2fd18e40.chunk.css",
-    "static/js/main.2f17ad21.chunk.js"
+    "static/js/main.14d745ce.chunk.js"
   ]
 }
