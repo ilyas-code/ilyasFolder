@@ -1,21 +1,20 @@
-import React  from 'react'
+import React from 'react'
 import { Link } from "react-router-dom";
 
 
 function UserSignUp(props) {
- 
+
     const userInfo = {
         email: null,
         password: null,
 
     }
-
+    //dskfd
+    // on change form handling function
     function handleSubmit(e) {
 
         const value = e.target.value;
         const type = e.target.type;
-
-
 
         if (type === "email") {
             userInfo.email = value;
@@ -23,8 +22,8 @@ function UserSignUp(props) {
             userInfo.password = value;
         }
 
-
     }
+    // Posting User data to the database server
     function formSubmit(e) {
 
         console.log(userInfo);
@@ -40,8 +39,8 @@ function UserSignUp(props) {
             body: raw,
             redirect: 'follow'
         };
-        
-        
+
+
         fetch("http://localhost:4000/PostUser", requestOptions)
             .then(response => response.text())
             .then(result => alert(result))
