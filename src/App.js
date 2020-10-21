@@ -8,30 +8,22 @@ import LogHeader from "./components/LogHeader";
 import UserSignIn from "./components/UserSignIn";
 import UserSignUp from "./components/UserSignUp";
 // import axios from "axios";
-import { BrowserRouter as Router,
-  Switch,
-  Route, } from "react-router-dom";
-  // Link,
-  // Redirect,
-  // useHistory,
-  // useLocation, useParams, useRouteMatch
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
-
-
+// Link,
+// Redirect,
+// useHistory,
+// useLocation, useParams, useRouteMatch
 
 function App() {
-  
   return (
     <div className="App">
-      <Router>
+      <Router >
         <Switch>
           <Route exact path="/">
             <Header />
           </Route>
-          <Route path="/quizUrl/:id" component={MainSection} />
-           
-            
-          
+          <Route strict path="/quizUrl/:id" component={MainSection} />
 
           <Route path="/SignUp">
             <UserSignUp />
@@ -43,12 +35,10 @@ function App() {
         </Switch>
       </Router>
     </div>
-  )
+  );
 }
 
-export default App
-
-
+export default App;
 
 class MainSection extends React.Component {
   constructor(props) {
@@ -59,7 +49,7 @@ class MainSection extends React.Component {
       score: null,
       tAndf: [],
       show: { display: "none" },
-      id:props.match.params.id
+      id: props.match.params.id,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -69,7 +59,6 @@ class MainSection extends React.Component {
   handleChange(event) {
     var value = event.target.value;
     var name = event.target.name;
-
 
     this.setState((prevState) => {
       prevState.ansrs[name] = value;
@@ -106,11 +95,11 @@ class MainSection extends React.Component {
   componentDidMount() {
     console.log(this.state.id);
     fetch(`http://localhost:4000/quizQ/${this.state.id}`)
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(
         (result) => {
           this.setState({
-            Quiz:result.qanda
+            Quiz: result.qanda,
           });
         },
         // Note: it's important to handle errors here
@@ -119,10 +108,10 @@ class MainSection extends React.Component {
         (error) => {
           this.setState({
             isLoaded: true,
-            error
+            error,
           });
         }
-      )
+      );
 
     // var xhr = new XMLHttpRequest();
 
@@ -138,8 +127,7 @@ class MainSection extends React.Component {
     // xhr.open("GET", "http://localhost:4000/quizQ");
 
     // xhr.send();
-    
-    
+
     // axios.get(`http://localhost:4000/quizQ/${this.state.id}`).then((res) => {
     //   console.log("Response Succeed");
     //   var resdata = res.data
@@ -151,8 +139,6 @@ class MainSection extends React.Component {
   }
 
   render() {
-    
-
     // console.log("from render "+this.state.Quiz[0]);
 
     const answers = this.state.Quiz.map((ab) => {
@@ -177,27 +163,26 @@ class MainSection extends React.Component {
     });
 
     return (
-       <div>
-         <LogHeader/>
-          <section>
-        {qsection}
+      <div>
+        <LogHeader />
+        <section>
+          {qsection}
 
-        <div style={this.state.show} className="scores">
-          <h1>Your Score : {this.state.score + "/" + this.state.Quiz.length}</h1>
-          <div className="answers">
-            <h1>Correct Answers:</h1>
-            <ul>{answers}</ul>
+          <div style={this.state.show} className="scores">
+            <h1>
+              Your Score : {this.state.score + "/" + this.state.Quiz.length}
+            </h1>
+            <div className="answers">
+              <h1>Correct Answers:</h1>
+              <ul>{answers}</ul>
+            </div>
           </div>
-        </div>
 
-        <div className="s-button">
-          <button onClick={this.showScore}>Submit Answer</button>
-        </div>
-      </section>
-       </div>
-     
+          <div className="s-button">
+            <button onClick={this.showScore}>Submit Answer</button>
+          </div>
+        </section>
+      </div>
     );
   }
 }
-
-
