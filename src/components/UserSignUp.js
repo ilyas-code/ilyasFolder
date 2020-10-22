@@ -1,15 +1,16 @@
-import React from 'react'
+import React  from 'react'
 import { Link } from "react-router-dom";
 
 
 function UserSignUp(props) {
-
+    
+    
     const userInfo = {
         email: null,
         password: null,
 
     }
-    //dskfd
+   
     // on change form handling function
     function handleSubmit(e) {
 
@@ -24,7 +25,7 @@ function UserSignUp(props) {
 
     }
     // Posting User data to the database server
-    function formSubmit(e) {
+    function formSubmit() {
 
         console.log(userInfo);
         // posting data to database server
@@ -47,6 +48,8 @@ function UserSignUp(props) {
             .catch(error => alert('error', error));
     }
 
+    
+
 
     return (
         <div className="sign">
@@ -63,7 +66,7 @@ function UserSignUp(props) {
                 <input type="Password" name="password" onChange={handleSubmit} />
                 <br />
                 <br />
-                <Link to="/" style={{ textDecoration: "none" }} >
+                <Link to="/" style={{ textDecoration: "none" }} replace >
                     <button type="submit" className="subBtn" onClick={formSubmit}>Submit</button>
                 </Link>
 
