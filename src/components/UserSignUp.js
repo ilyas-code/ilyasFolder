@@ -1,16 +1,17 @@
-import React  from 'react'
-import { Link } from "react-router-dom";
+import React, { useState } from 'react'
+import { Redirect ,useHistory} from "react-router-dom";
 
 
 function UserSignUp(props) {
-    
-    
+    let history = useHistory();
+    const [isLoggedIn, setStatus] = useState(false)
+
     const userInfo = {
         email: null,
         password: null,
 
     }
-   
+
     // on change form handling function
     function handleSubmit(e) {
 
@@ -25,8 +26,8 @@ function UserSignUp(props) {
 
     }
     // Posting User data to the database server
-    function formSubmit() {
-
+    async function formSubmit(e) {
+        e.preventDefault();
         console.log(userInfo);
         // posting data to database server
         var myHeaders = new Headers();
@@ -44,18 +45,29 @@ function UserSignUp(props) {
 
         fetch("http://localhost:4000/PostUser", requestOptions)
             .then(response => response.text())
-            .then(result => alert(result))
-            .catch(error => alert('error', error));
+            .then(result => {
+                if (result === "posted succesfully") {
+                    // setStatus(true)
+                    history.push("/")
+                }
+                
+                alert(result);
+            })
+            .catch(error => console.log(error));
+
+
+
+
     }
 
-    
 
+// isLoggedIn ? (<Redirect to="/" />) : 
 
     return (
         <div className="sign">
             <h1>Sign up</h1>
 
-            <form>
+            <form method = "POST">
                 <p style={{ fontSize: 25 }}>Email:</p>
 
                 <input type="Email" name="email" onChange={handleSubmit} />
@@ -66,9 +78,9 @@ function UserSignUp(props) {
                 <input type="Password" name="password" onChange={handleSubmit} />
                 <br />
                 <br />
-                <Link to="/" style={{ textDecoration: "none" }} replace >
-                    <button type="submit" className="subBtn" onClick={formSubmit}>Submit</button>
-                </Link>
+
+                <button type="submit" className="subBtn" onClick={formSubmit}>Submit</button>
+
 
             </form>
 
