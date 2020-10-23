@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ilyasFolder/static/css/main.830522bd.chunk.css",
-    "main.js": "/ilyasFolder/static/js/main.d493d2df.chunk.js",
-    "main.js.map": "/ilyasFolder/static/js/main.d493d2df.chunk.js.map",
+    "main.js": "/ilyasFolder/static/js/main.b273b32d.chunk.js",
+    "main.js.map": "/ilyasFolder/static/js/main.b273b32d.chunk.js.map",
     "runtime-main.js": "/ilyasFolder/static/js/runtime-main.ed3f1dca.js",
     "runtime-main.js.map": "/ilyasFolder/static/js/runtime-main.ed3f1dca.js.map",
     "static/js/2.4d78b397.chunk.js": "/ilyasFolder/static/js/2.4d78b397.chunk.js",
     "static/js/2.4d78b397.chunk.js.map": "/ilyasFolder/static/js/2.4d78b397.chunk.js.map",
     "index.html": "/ilyasFolder/index.html",
-    "precache-manifest.0c26ba4094ebba3cd29c9650344d4f80.js": "/ilyasFolder/precache-manifest.0c26ba4094ebba3cd29c9650344d4f80.js",
+    "precache-manifest.7f4e8bb35f524c1e501d0d964615ee7c.js": "/ilyasFolder/precache-manifest.7f4e8bb35f524c1e501d0d964615ee7c.js",
     "service-worker.js": "/ilyasFolder/service-worker.js",
     "static/css/main.830522bd.chunk.css.map": "/ilyasFolder/static/css/main.830522bd.chunk.css.map",
     "static/js/2.4d78b397.chunk.js.LICENSE.txt": "/ilyasFolder/static/js/2.4d78b397.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.ed3f1dca.js",
     "static/js/2.4d78b397.chunk.js",
     "static/css/main.830522bd.chunk.css",
-    "static/js/main.d493d2df.chunk.js"
+    "static/js/main.b273b32d.chunk.js"
   ]
 }
