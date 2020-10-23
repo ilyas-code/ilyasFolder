@@ -164,3 +164,28 @@ button {
   padding: 0 0 50px 0;
   text-decoration: underline;
 }
+.home-body{
+  margin: 0 auto;
+  width: 300px;
+  padding-top: 30px;
+  display:flex;
+  flex-direction: column;
+  
+}
+
+#QuizId {
+  
+  padding: 8px 2px 8px 2px;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 10px;
+  border: solid rgb(255, 145, 0) 2px;
+  outline: 0;
+}
+
+#idForm{
+  border: green solid 1px;
+  margin: 0 auto;
+  padding:0;
+  width: 100%;
+}

@@ -2,54 +2,80 @@ import React from "react";
 import "./styles/styles.css";
 import "./App.css";
 import Section from "./components/Section";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import LogHeader from "./components/LogHeader";
-// import Quiz from "./components/quiz";
-import UserSignIn from "./components/UserSignIn";
-import UserSignUp from "./components/UserSignUp";
-// import axios from "axios";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import Quiz from "./components/quiz";
+// import UserSignIn from "./components/UserSignIn";
+// import UserSignUp from "./components/UserSignUp";
+// // import axios from "axios";
+// import { HashRouter as Router, Switch, Route,useHistory, Redirect } from "react-router-dom";
 
 // Link,
 // Redirect,
 // useHistory,
 // useLocation, useParams, useRouteMatch
 
-function App() {
-  return (
-    <div className="App">
-      <Router >
-        <Switch>
-          <Route exact path="/">
-            <Header />
-          </Route>
-          <Route strict path="/quizUrl/:id" component={MainSection} />
+// function App() {
+//   var joinId = 0;
+//   let history = useHistory();
+//   function joinIdChange(e){
+//       const value = e.target.value;
+//       joinId = value
+//       console.log(value);
+//   }
 
-          <Route path="/SignUp">
-            <UserSignUp />
-          </Route>
+//   function handleJoin(e){
+//     e.preventDefault();
+//     if (joinId === 0){
+//       alert("please enter id")
+//     }else{
+      
+//     null
+//     }
+    
+//   }
 
-          <Route path="/SignIn">
-            <UserSignIn />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
-  );
-}
+//   return (
+//     <div className="App">
+//       <Router>
+//         <Switch>
+//           <Route exact path="/">
+//             <Header />
+//             <div className="home-body">
+//               <form id="idForm" onSubmit={handleJoin}>
+//                <input type="text" name="joinId" id="QuizId" onChange={joinIdChange}/>
+//                 <button type="submit" className="subBtn" onclick={<Redirect strict to="/quizUrl/1234"/>}>Join</button> 
+//               </form>
+              
+//             </div>
+//           </Route>
+//           <Route strict path="/quizUrl/:id" component={MainSection} />
 
-export default App;
+//           <Route path="/SignUp">
+//             <UserSignUp />
+//           </Route>
 
-class MainSection extends React.Component {
+//           <Route path="/SignIn">
+//             <UserSignIn />
+//           </Route>
+//         </Switch>
+//       </Router>
+//     </div>
+//   );
+// }
+
+
+
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Quiz: [],
+      // Quiz: [],
       ansrs: [],
       score: null,
       tAndf: [],
-      show: { display: "none" },
-      id: props.match.params.id,
+      show: { display: "none" }
+      // id: props.match.params.id,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -71,8 +97,8 @@ class MainSection extends React.Component {
     var scr = 0;
     var tF = [];
     var shw = { display: "block" };
-    for (let i = 0; i <= this.state.Quiz.length - 1; i++) {
-      if (this.state.Quiz[i].Ans === this.state.ansrs[i]) {
+    for (let i = 0; i <= Quiz.length - 1; i++) {
+      if (Quiz[i].Ans === this.state.ansrs[i]) {
         scr = scr + 1;
         tF[i] = true;
       } else {
@@ -92,26 +118,26 @@ class MainSection extends React.Component {
     });
   }
 
-  componentDidMount() {
-    console.log(this.state.id);
-    fetch(`http://localhost:4000/quizQ/${this.state.id}`)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            Quiz: result.qanda,
-          });
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error,
-          });
-        }
-      );
+  // componentDidMount() {
+  //   console.log(this.state.id);
+  //   fetch(`http://localhost:4000/quizQ/${this.state.id}`)
+  //     .then((res) => res.json())
+  //     .then(
+  //       (result) => {
+  //         this.setState({
+  //           Quiz: result.qanda,
+  //         });
+  //       },
+  //       // Note: it's important to handle errors here
+  //       // instead of a catch() block so that we don't swallow
+  //       // exceptions from actual bugs in components.
+  //       (error) => {
+  //         this.setState({
+  //           isLoaded: true,
+  //           error,
+  //         });
+  //       }
+  //     );
 
     // var xhr = new XMLHttpRequest();
 
@@ -136,12 +162,12 @@ class MainSection extends React.Component {
     //     { Quiz: resdata.qanda }
     //   );
     // }).catch(err => { console.log(err) })
-  }
+  // }
 
   render() {
     // console.log("from render "+this.state.Quiz[0]);
 
-    const answers = this.state.Quiz.map((ab) => {
+    const answers = Quiz.map((ab) => {
       return (
         <li key={ab.qid}>
           {ab.qid + 1 + ". "}
@@ -149,7 +175,7 @@ class MainSection extends React.Component {
         </li>
       );
     });
-    const qsection = this.state.Quiz.map((Qiz) => {
+    const qsection = Quiz.map((Qiz) => {
       return (
         <Section
           key={Qiz.qid}
@@ -170,7 +196,7 @@ class MainSection extends React.Component {
 
           <div style={this.state.show} className="scores">
             <h1>
-              Your Score : {this.state.score + "/" + this.state.Quiz.length}
+              Your Score : {this.state.score + "/" + Quiz.length}
             </h1>
             <div className="answers">
               <h1>Correct Answers:</h1>
@@ -186,3 +212,5 @@ class MainSection extends React.Component {
     );
   }
 }
+
+export default App;

@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import { Redirect ,useHistory} from "react-router-dom";
+import React from 'react'
+import { useHistory } from "react-router-dom";
 
 
 function UserSignUp(props) {
     let history = useHistory();
-    const [isLoggedIn, setStatus] = useState(false)
+
 
     const userInfo = {
         email: null,
@@ -47,10 +47,10 @@ function UserSignUp(props) {
             .then(response => response.text())
             .then(result => {
                 if (result === "posted succesfully") {
-                    // setStatus(true)
+
                     history.push("/")
                 }
-                
+
                 alert(result);
             })
             .catch(error => console.log(error));
@@ -61,13 +61,13 @@ function UserSignUp(props) {
     }
 
 
-// isLoggedIn ? (<Redirect to="/" />) : 
+
 
     return (
         <div className="sign">
             <h1>Sign up</h1>
 
-            <form method = "POST">
+            <form method="POST" onSubmit={formSubmit}>
                 <p style={{ fontSize: 25 }}>Email:</p>
 
                 <input type="Email" name="email" onChange={handleSubmit} />
@@ -79,7 +79,7 @@ function UserSignUp(props) {
                 <br />
                 <br />
 
-                <button type="submit" className="subBtn" onClick={formSubmit}>Submit</button>
+                <button type="submit" className="subBtn" >Submit</button>
 
 
             </form>
